@@ -91,8 +91,7 @@ public class LastVisibleNumberDirectRule extends DirectRule {
         }
         if (lightUpBoard.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return lightUpBoard;
         }
     }

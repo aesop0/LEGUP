@@ -38,8 +38,7 @@ public class NoTentForTreeContradictionRule extends ContradictionRule {
         int adjUnknown = treeTentBoard.getAdjacent(cell, TreeTentType.UNKNOWN).size();
         if (adjTent == 0 && adjUnknown == 0) {
             return null;
-        }
-        else {
+        } else {
             if (adjTent != 0) {
                 List<TreeTentLine> lines = treeTentBoard.getLines();
                 List<TreeTentCell> adjTents = treeTentBoard.getAdjacent(cell, TreeTentType.TENT);

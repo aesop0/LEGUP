@@ -40,22 +40,19 @@ public class ApplyDefaultDirectRuleCommand extends PuzzleCommand {
         List<TreeElementView> selectedViews = selection.getSelectedViews();
         if (selectedViews.isEmpty()) {
             return CommandError.DEFAULT_APPLICATION + " - " + CommandError.NO_SELECTED_VIEWS.toString();
-        }
-        else {
+        } else {
             for (TreeElementView view : selectedViews) {
                 TreeElement element = view.getTreeElement();
                 if (element.getType() == TreeElementType.NODE) {
                     TreeNode node = (TreeNode) element;
                     if (!node.getChildren().isEmpty()) {
                         return CommandError.DEFAULT_APPLICATION + " - " + CommandError.NO_CHILDREN.toString();
-                    }
-                    else {
+                    } else {
                         if (rule.getDefaultBoard(node) == null) {
                             return CommandError.DEFAULT_APPLICATION + " - " + "This selection contains a tree element that this rule cannot be applied to.";
                         }
                     }
-                }
-                else {
+                } else {
                     return CommandError.DEFAULT_APPLICATION + " - " + CommandError.SELECTION_CONTAINS_TRANSITION.toString();
                 }
             }
@@ -82,8 +79,7 @@ public class ApplyDefaultDirectRuleCommand extends PuzzleCommand {
                 transition = (TreeTransition) tree.addTreeElement(node);
                 childNode = (TreeNode) tree.addTreeElement(transition);
                 addMap.put(node, transition);
-            }
-            else {
+            } else {
                 tree.addTreeElement(node, transition);
                 childNode = transition.getChildNode();
             }

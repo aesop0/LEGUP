@@ -81,8 +81,7 @@ public class MaterialPasswordFieldUI extends BasicPasswordFieldUI implements Foc
                         getComponent().select(pos, pos + 1);
                         getComponent().replaceSelection("");
                     }
-                }
-                else {
+                } else {
                     getComponent().replaceSelection("");
                 }
             }
@@ -122,8 +121,7 @@ public class MaterialPasswordFieldUI extends BasicPasswordFieldUI implements Foc
         if (getComponent().hasFocus()) {
             c.setBackground(focusedBackground);
             c.setSelectionColor(focusedSelectionBackground);
-        }
-        else {
+        } else {
             c.setBackground(unfocusedBackground);
             c.setSelectionColor(unfocusedSelectionBackground);
         }

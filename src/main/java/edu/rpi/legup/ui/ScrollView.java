@@ -153,8 +153,7 @@ public class ScrollView extends JScrollPane {
             updateSize();
             updatePosition(point, mag);
             // zoom out
-        }
-        else {
+        } else {
             mag = 1 / mag;
             // check zoom bounds
             if (scale * mag < minScale) {
@@ -192,8 +191,7 @@ public class ScrollView extends JScrollPane {
             updateSize();
             updatePosition(p, mag);
             // zoom out
-        }
-        else {
+        } else {
             updatePosition(p, mag);
             updateSize();
         }

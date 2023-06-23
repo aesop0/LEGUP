@@ -89,12 +89,10 @@ public class PossibleNumberCaseRule extends CaseRule {
         Set<SudokuCell> group;
         if (groupType == GroupType.REGION) {
             group = sudokuBoard.getRegion(cell.getGroupIndex());
-        }
-        else {
+        } else {
             if (groupType == GroupType.ROW) {
                 group = sudokuBoard.getRow(cell.getLocation().y);
-            }
-            else {
+            } else {
                 group = sudokuBoard.getCol(cell.getLocation().x);
             }
         }

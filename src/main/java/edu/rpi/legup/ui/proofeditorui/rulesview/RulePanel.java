@@ -70,7 +70,7 @@ public abstract class RulePanel extends JPanel {
     }
 
     public void updateRules() {
-        for (Rule rule : rules){
+        for (Rule rule : rules) {
             rule.loadImage();
         }
         setRules(rules);
@@ -80,14 +80,14 @@ public abstract class RulePanel extends JPanel {
     /**
      * Search a certain rule in all the puzzles and set it for the searchBarPanel
      *
-     * @param puzzle puzzle where the rule is being searched for
+     * @param puzzle   puzzle where the rule is being searched for
      * @param ruleName rule that is being compared to each puzzle
-     *
-     * This function is the searching algorithm for "public void setSearchBar(Puzzle allPuzzle)" (below)
-     *
-     * It takes two param Puzzle puzzle and String ruleName
-     * puzzle contains rules, this function will compare each rule of puzzle with ruleName,
-     * to find exact same, similar rules, or all the rules with same start letter (if input is a signal letter)
+     *                 <p>
+     *                 This function is the searching algorithm for "public void setSearchBar(Puzzle allPuzzle)" (below)
+     *                 <p>
+     *                 It takes two param Puzzle puzzle and String ruleName
+     *                 puzzle contains rules, this function will compare each rule of puzzle with ruleName,
+     *                 to find exact same, similar rules, or all the rules with same start letter (if input is a signal letter)
      */
     public void searchForRule(Puzzle puzzle, String ruleName) {
 
@@ -118,8 +118,7 @@ public abstract class RulePanel extends JPanel {
                     revalidate();
                     return;
 
-                }
-                else {
+                } else {
                     if (similarityCheck(ruleName, rule.getRuleName().toUpperCase()) > 0.2) {
                         ruleButtons[similarfound] = new RuleButton(rule);
                         ruleFrame.getButtonGroup().add(ruleButtons[similarfound]);
@@ -133,8 +132,7 @@ public abstract class RulePanel extends JPanel {
                         add(ruleButtons[similarfound]);
                         similarfound += 1;
                         revalidate();
-                    }
-                    else {
+                    } else {
                         if ((ruleName.charAt(0)) == (rule.getRuleName().toUpperCase()).charAt(0)) {
                             ruleButtons[similarfound] = new RuleButton(rule);
                             ruleFrame.getButtonGroup().add(ruleButtons[similarfound]);
@@ -163,6 +161,7 @@ public abstract class RulePanel extends JPanel {
      * Calculates the similarity (a number within 0 and 1) between two strings.
      * This function will take two para String s1 and String s2, which s1 is the user's input
      * and s2 is the compared really rule name
+     *
      * @param s1 user's input
      * @param s2 the compared really rule name
      * @return a similarity degree between 0 and 1
@@ -184,6 +183,7 @@ public abstract class RulePanel extends JPanel {
 
     /**
      * Help function for similarityCheck();
+     *
      * @param s1 user's input
      * @param s2 the compared really rule name
      * @return a similarity degree between 0 and 1
@@ -198,8 +198,7 @@ public abstract class RulePanel extends JPanel {
             for (int j = 0; j <= s2.length(); j++) {
                 if (i == 0) {
                     costs[j] = j;
-                }
-                else {
+                } else {
                     if (j > 0) {
                         int newValue = costs[j - 1];
                         if (s1.charAt(i - 1) != s2.charAt(j - 1)) {
@@ -222,17 +221,18 @@ public abstract class RulePanel extends JPanel {
      * search bar allows user to input a name to get relative rules
      * once a name is entered and click ok will load (a/several) rule icon,
      * which has all the functions just as other rule icons.
+     *
      * @param allPuzzle name of rule input
      */
     public void setSearchBar(Puzzle allPuzzle) {
 
         searchBarPanel = new JPanel(new FlowLayout(SwingConstants.LEADING, 6, 6));
 
-        textField=new JTextField();
+        textField = new JTextField();
         ruleFrame.addComponentListener(new ComponentAdapter() {
             public void componentResized(ComponentEvent componentEvent) {
-                Component c= componentEvent.getComponent();
-                textField.setColumns((8+(c.getWidth()-250)/10)-1);
+                Component c = componentEvent.getComponent();
+                textField.setColumns((8 + (c.getWidth() - 250) / 10) - 1);
             }
         });
 
@@ -267,8 +267,7 @@ public abstract class RulePanel extends JPanel {
                         }
                     }
                     searchForRule(allPuzzle, inputRule);
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(null, "Please give a name", "Confirm", JOptionPane.INFORMATION_MESSAGE);
                 }
 

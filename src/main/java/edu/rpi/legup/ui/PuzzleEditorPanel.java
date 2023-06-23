@@ -110,8 +110,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         newPuzzle.addActionListener((ActionEvent) -> loadPuzzle());
         if (os.equals("mac")) {
             newPuzzle.setAccelerator(KeyStroke.getKeyStroke('N', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
-        }
-        else {
+        } else {
             newPuzzle.setAccelerator(KeyStroke.getKeyStroke('N', InputEvent.CTRL_DOWN_MASK));
         }
         // file>save
@@ -121,8 +120,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         directSavePuzzle.addActionListener((ActionEvent) -> direct_save());
         if (os.equals("mac")) {
             newPuzzle.setAccelerator(KeyStroke.getKeyStroke('D', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
-        }
-        else {
+        } else {
             newPuzzle.setAccelerator(KeyStroke.getKeyStroke('D', InputEvent.CTRL_DOWN_MASK));
         }
 
@@ -130,8 +128,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         exit.addActionListener((ActionEvent) -> exitEditor());
         if (os.equals("mac")) {
             exit.setAccelerator(KeyStroke.getKeyStroke('Q', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
-        }
-        else {
+        } else {
             exit.setAccelerator(KeyStroke.getKeyStroke('Q', InputEvent.CTRL_DOWN_MASK));
         }
         menus[0].add(newPuzzle);
@@ -152,8 +149,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
                 GameBoardFacade.getInstance().getHistory().undo());
         if (os.equals("mac")) {
             undo.setAccelerator(KeyStroke.getKeyStroke('Z', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
-        }
-        else {
+        } else {
             undo.setAccelerator(KeyStroke.getKeyStroke('Z', InputEvent.CTRL_DOWN_MASK));
         }
 
@@ -172,8 +168,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
             redo.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(
                     KeyStroke.getKeyStroke('Y', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), "redoAction");
             redo.setAccelerator(KeyStroke.getKeyStroke('Z', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask() + InputEvent.SHIFT_DOWN_MASK));
-        }
-        else {
+        } else {
             redo.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('Y', InputEvent.CTRL_DOWN_MASK), "redoAction");
             redo.getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('Z', InputEvent.SHIFT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK), "redoAction");
             redo.getActionMap().put("redoAction", redoAction);
@@ -195,8 +190,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         helpLegup.addActionListener(l -> {
             try {
                 java.awt.Desktop.getDesktop().browse(URI.create("https://github.com/Bram-Hub/LEGUP/wiki"));
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 LOGGER.error("Can't open web page");
             }
         });
@@ -317,11 +311,9 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         GameBoardFacade facade = GameBoardFacade.getInstance();
         try {
             facade.loadPuzzle(game, rows, columns);
-        }
-        catch (IllegalArgumentException exception) {
+        } catch (IllegalArgumentException exception) {
             throw new IllegalArgumentException(exception.getMessage());
-        }
-        catch (RuntimeException e) {
+        } catch (RuntimeException e) {
             e.printStackTrace();
             LOGGER.error(e.getMessage());
         }
@@ -350,8 +342,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         if (fileDialog.getDirectory() != null && fileDialog.getFile() != null) {
             fileName = fileDialog.getDirectory() + File.separator + fileDialog.getFile();
             puzzleFile = new File(fileName);
-        }
-        else {
+        } else {
             // The attempt to prompt a puzzle ended gracefully (cancel)
             return null;
         }
@@ -377,8 +368,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
                 GameBoardFacade.getInstance().loadPuzzleEditor(fileName);
                 String puzzleName = GameBoardFacade.getInstance().getPuzzleModule().getName();
                 frame.setTitle(puzzleName + " - " + puzzleFile.getName());
-            }
-            catch (InvalidFileFormatException e) {
+            } catch (InvalidFileFormatException e) {
                 legupUI.displayPanel(0);
                 LOGGER.error(e.getMessage());
                 JOptionPane.showMessageDialog(null, "File does not exist, cannot be read, or cannot be edited", "Error", JOptionPane.ERROR_MESSAGE);
@@ -469,8 +459,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
                     throw new ExportFileException("Puzzle exporter null");
                 }
                 exporter.exportPuzzle(fileName);
-            }
-            catch (ExportFileException e) {
+            } catch (ExportFileException e) {
                 e.printStackTrace();
             }
         }
@@ -502,8 +491,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         String curFileName = GameBoardFacade.getInstance().getCurFileName();
         if (curFileName == null) {
             fileDialog.setDirectory(LegupPreferences.getInstance().getUserPref(LegupPreferences.WORK_DIRECTORY));
-        }
-        else {
+        } else {
             File curFile = new File(curFileName);
             fileDialog.setDirectory(curFile.getParent());
         }
@@ -521,8 +509,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
                     throw new ExportFileException("Puzzle exporter null");
                 }
                 exporter.exportPuzzle(fileName);
-            }
-            catch (ExportFileException e) {
+            } catch (ExportFileException e) {
                 e.printStackTrace();
             }
         }

@@ -98,12 +98,10 @@ public class DropShadowBorder extends AbstractBorder implements Border {
             topLeftShadowPoint = new Point();
             if (showLeftShadow && !showTopShadow) {
                 topLeftShadowPoint.setLocation(x, y + shadowSize);
-            }
-            else {
+            } else {
                 if (showLeftShadow && showTopShadow) {
                     topLeftShadowPoint.setLocation(x, y);
-                }
-                else {
+                } else {
                     if (!showLeftShadow && showTopShadow) {
                         topLeftShadowPoint.setLocation(x + shadowSize, y);
                     }
@@ -116,12 +114,10 @@ public class DropShadowBorder extends AbstractBorder implements Border {
             bottomLeftShadowPoint = new Point();
             if (showLeftShadow && !showBottomShadow) {
                 bottomLeftShadowPoint.setLocation(x, y + height - shadowSize - shadowSize);
-            }
-            else {
+            } else {
                 if (showLeftShadow && showBottomShadow) {
                     bottomLeftShadowPoint.setLocation(x, y + height - shadowSize);
-                }
-                else {
+                } else {
                     if (!showLeftShadow && showBottomShadow) {
                         bottomLeftShadowPoint.setLocation(x + shadowSize, y + height - shadowSize);
                     }
@@ -134,12 +130,10 @@ public class DropShadowBorder extends AbstractBorder implements Border {
             bottomRightShadowPoint = new Point();
             if (showRightShadow && !showBottomShadow) {
                 bottomRightShadowPoint.setLocation(x + width - shadowSize, y + height - shadowSize - shadowSize);
-            }
-            else {
+            } else {
                 if (showRightShadow && showBottomShadow) {
                     bottomRightShadowPoint.setLocation(x + width - shadowSize, y + height - shadowSize);
-                }
-                else {
+                } else {
                     if (!showRightShadow && showBottomShadow) {
                         bottomRightShadowPoint.setLocation(x + width - shadowSize - shadowSize, y + height - shadowSize);
                     }
@@ -152,12 +146,10 @@ public class DropShadowBorder extends AbstractBorder implements Border {
             topRightShadowPoint = new Point();
             if (showRightShadow && !showTopShadow) {
                 topRightShadowPoint.setLocation(x + width - shadowSize, y + shadowSize);
-            }
-            else {
+            } else {
                 if (showRightShadow && showTopShadow) {
                     topRightShadowPoint.setLocation(x + width - shadowSize, y);
-                }
-                else {
+                } else {
                     if (!showRightShadow && showTopShadow) {
                         topRightShadowPoint.setLocation(x + width - shadowSize - shadowSize, y);
                     }

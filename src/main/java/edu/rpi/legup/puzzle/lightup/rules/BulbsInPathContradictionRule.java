@@ -38,8 +38,7 @@ public class BulbsInPathContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(i, location.y);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.BULB) {
                     return null;
                 }
@@ -49,8 +48,7 @@ public class BulbsInPathContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(i, location.y);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.BULB) {
                     return null;
                 }
@@ -60,8 +58,7 @@ public class BulbsInPathContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(location.x, i);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.BULB) {
                     return null;
                 }
@@ -71,8 +68,7 @@ public class BulbsInPathContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(location.x, i);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.BULB) {
                     return null;
                 }

@@ -43,12 +43,10 @@ public class AddTreeElementCommand extends PuzzleCommand {
             TreeElement child = addChild.get(treeElement);
             if (child == null) {
                 child = tree.addTreeElement(treeElement);
-            }
-            else {
+            } else {
                 if (treeElement.getType() == TreeElementType.NODE) {
                     child = tree.addTreeElement((TreeNode) treeElement, (TreeTransition) child);
-                }
-                else {
+                } else {
                     child = tree.addTreeElement((TreeTransition) treeElement, (TreeNode) child);
                 }
             }
@@ -76,8 +74,7 @@ public class AddTreeElementCommand extends PuzzleCommand {
         List<TreeElementView> selectedViews = selection.getSelectedViews();
         if (selectedViews.isEmpty()) {
             return CommandError.NO_SELECTED_VIEWS.toString();
-        }
-        else {
+        } else {
             for (TreeElementView view : selectedViews) {
                 TreeElement element = view.getTreeElement();
                 if (element.getType() == TreeElementType.TRANSITION) {
@@ -85,8 +82,7 @@ public class AddTreeElementCommand extends PuzzleCommand {
                     if (transition.getChildNode() != null) {
                         return CommandError.ADD_WITH_CHILD.toString();
                     }
-                }
-                else {
+                } else {
                     TreeNode node = (TreeNode) element;
                     if (!node.getChildren().isEmpty()) {
                         TreeTransition transition = node.getChildren().get(0);

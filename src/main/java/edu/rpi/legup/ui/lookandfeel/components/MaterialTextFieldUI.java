@@ -92,8 +92,7 @@ public class MaterialTextFieldUI extends BasicTextFieldUI implements FocusListen
                         getComponent().select(pos, pos + 1);
                         getComponent().replaceSelection("");
                     }
-                }
-                else {
+                } else {
                     getComponent().replaceSelection("");
                 }
             }
@@ -144,8 +143,7 @@ public class MaterialTextFieldUI extends BasicTextFieldUI implements FocusListen
         if (getComponent().hasFocus()) {
             lineColor = focusedBackground;
             c.setSelectionColor(focusedSelectionBackground);
-        }
-        else {
+        } else {
             lineColor = unfocusedBackground;
             c.setSelectionColor(unfocusedSelectionBackground);
         }

@@ -57,14 +57,12 @@ public class TreeController extends Controller {
         if (treeElementView != null) {
             if (e.isShiftDown()) {
                 selection.addToSelection(treeElementView);
-            }
-            else {
+            } else {
                 if (e.isControlDown()) {
                     if (!(selection.getSelectedViews().size() == 1 && treeElementView == selection.getFirstSelection())) {
                         selection.toggleSelection(treeElementView);
                     }
-                }
-                else {
+                } else {
                     selection.newSelection(treeElementView);
                 }
             }
@@ -139,8 +137,7 @@ public class TreeController extends Controller {
                 puzzle.notifyBoardListeners(listener -> listener.onTreeElementChanged(treeElementView.getTreeElement()));
                 selection.newHover(treeElementView);
                 puzzle.notifyTreeListeners(listener -> listener.onTreeSelectionChanged(selection));
-            }
-            else {
+            } else {
                 if (treeElementView == null && selection.getHover() != null) {
                     puzzle.notifyBoardListeners(listener -> listener.onTreeElementChanged(selection.getFirstSelection().getTreeElement()));
                     selection.clearHover();

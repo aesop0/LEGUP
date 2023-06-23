@@ -32,8 +32,7 @@ public class MaterialTableUI extends BasicTableUI {
         int rowHeight = UIManager.getInt("Table.rowHeight");
         if (rowHeight > 0) {
             table.setRowHeight(rowHeight);
-        }
-        else {
+        } else {
             table.setRowHeight(table.getRowHeight() + 25);
         }
 

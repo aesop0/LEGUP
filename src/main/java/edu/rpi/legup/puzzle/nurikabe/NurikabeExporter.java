@@ -15,8 +15,7 @@ public class NurikabeExporter extends PuzzleExporter {
         NurikabeBoard board;
         if (puzzle.getTree() != null) {
             board = (NurikabeBoard) puzzle.getTree().getRootNode().getBoard();
-        }
-        else {
+        } else {
             board = (NurikabeBoard) puzzle.getBoardView().getBoard();
         }
 

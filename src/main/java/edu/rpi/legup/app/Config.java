@@ -146,8 +146,7 @@ public class Config {
                 this.fileCreationDisabledStatuses.put(name, Boolean.valueOf(status));
             }
 
-        }
-        catch (ParserConfigurationException | SAXException | IOException e) {
+        } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new InvalidConfigException(e.getMessage());
         }
     }

@@ -36,8 +36,7 @@ public class TouchingTentsContradictionRule extends ContradictionRule {
         int diagTree = treeTentBoard.getDiagonals(cell, TreeTentType.TENT).size();
         if (adjTree > 0 || diagTree > 0) {
             return null;
-        }
-        else {
+        } else {
             return super.getNoContradictionMessage();
         }
     }

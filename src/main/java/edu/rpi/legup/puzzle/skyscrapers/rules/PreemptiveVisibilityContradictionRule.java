@@ -70,8 +70,7 @@ public class PreemptiveVisibilityContradictionRule extends ContradictionRule {
 
                 if (exists) {
                     rowQ.add(temp);
-                }
-                else {
+                } else {
                     //set flags
                     boolean dupeTemp = temp.getDupeFlag();
                     boolean viewTemp = temp.getViewFlag();
@@ -110,8 +109,7 @@ public class PreemptiveVisibilityContradictionRule extends ContradictionRule {
 
                 if (exists) {
                     colQ.add(temp);
-                }
-                else {
+                } else {
                     //set flags
                     boolean dupeTemp = temp.getDupeFlag();
                     boolean viewTemp = temp.getViewFlag();

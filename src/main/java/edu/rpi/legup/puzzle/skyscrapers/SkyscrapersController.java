@@ -56,12 +56,10 @@ public class SkyscrapersController extends ElementController {
                         autoCaseRuleCommand.execute();
                         getInstance().getHistory().pushChange(autoCaseRuleCommand);
                         treePanel.updateError("");
-                    }
-                    else {
+                    } else {
                         treePanel.updateError(autoCaseRuleCommand.getError());
                     }
-                }
-                else {
+                } else {
                     if (dragStart == lastCellPressed) {
                         if (dragStart.getPuzzleElement().getIndex() >= 0) {
                             ICommand edit = new EditDataCommand(lastCellPressed, selection, e);
@@ -69,19 +67,16 @@ public class SkyscrapersController extends ElementController {
                                 edit.execute();
                                 getInstance().getHistory().pushChange(edit);
                                 treePanel.updateError("");
-                            }
-                            else {
+                            } else {
                                 treePanel.updateError(edit.getError());
                             }
-                        }
-                        else {
+                        } else {
                             ClueCommand edit = new ClueCommand(selection, (SkyscrapersClueView) dragStart);
                             if (edit.canExecute()) {
                                 edit.execute();
                                 getInstance().getHistory().pushChange(edit);
                                 treePanel.updateError("");
-                            }
-                            else {
+                            } else {
                                 treePanel.updateError(edit.getError());
                             }
                         }
@@ -100,18 +95,15 @@ public class SkyscrapersController extends ElementController {
             if (cell.getData().value < cell.getMax()) {
                 int num = cell.getData().value + 1;
                 cell.setData(cell.getData().convertToSkyType(num));
-            }
-            else {
+            } else {
                 cell.setData(SkyscrapersType.UNKNOWN);
             }
-        }
-        else {
+        } else {
             if (e.getButton() == MouseEvent.BUTTON3) {
                 if (cell.getData().value > 0) {
                     int num = cell.getData().value - 1;
                     cell.setData(cell.getData().convertToSkyType(num));
-                }
-                else {
+                } else {
                     cell.setData(cell.getData().convertToSkyType(cell.getMax()));
                 }
             }

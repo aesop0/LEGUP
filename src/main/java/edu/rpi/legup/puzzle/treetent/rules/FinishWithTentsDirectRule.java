@@ -45,8 +45,7 @@ public class FinishWithTentsDirectRule extends DirectRule {
 
         if (isForced(initialBoard, initCell)) {
             return null;
-        }
-        else {
+        } else {
             return super.getInvalidUseOfRuleMessage() + ": This cell is not forced to be tent.";
         }
     }
@@ -80,8 +79,7 @@ public class FinishWithTentsDirectRule extends DirectRule {
         }
         if (treeTentBoard.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return treeTentBoard;
         }
     }

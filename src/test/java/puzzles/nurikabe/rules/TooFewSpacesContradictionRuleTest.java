@@ -40,8 +40,7 @@ public class TooFewSpacesContradictionRuleTest {
                 Point point = new Point(k, i);
                 if (point.equals(new Point(1, 1))) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

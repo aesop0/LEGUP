@@ -32,13 +32,11 @@ public abstract class DirectRule extends Rule {
 
         if (!finalBoard.isModified()) {
             return "State must be modified";
-        }
-        else {
+        } else {
             if (transition.getParents().size() != 1 ||
                     transition.getParents().get(0).getChildren().size() != 1) {
                 return "State must have only 1 parent and 1 child";
-            }
-            else {
+            } else {
                 return checkRuleRaw(transition);
             }
         }
@@ -78,13 +76,11 @@ public abstract class DirectRule extends Rule {
         String checkStr;
         if (!puzzleElement.isModified()) {
             checkStr = "PuzzleElement must be modified";
-        }
-        else {
+        } else {
             if (transition.getParents().size() != 1 ||
                     transition.getParents().get(0).getChildren().size() != 1) {
                 checkStr = "State must have only 1 parent and 1 child";
-            }
-            else {
+            } else {
                 checkStr = checkRuleRawAt(transition, puzzleElement);
             }
         }

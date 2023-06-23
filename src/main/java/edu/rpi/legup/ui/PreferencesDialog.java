@@ -36,8 +36,7 @@ public class PreferencesDialog extends JDialog {
     static {
         try {
             folderIcon = ImageIO.read(PreferencesDialog.class.getResource("/edu/rpi/legup/imgs/folder.png"));
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Unable to locate icons");
         }
     }
@@ -98,13 +97,11 @@ public class PreferencesDialog extends JDialog {
         try {
             if (Boolean.valueOf(prefs.getUserPref(LegupPreferences.DARK_MODE))) {
                 UIManager.setLookAndFeel(new FlatDarkLaf());
-            }
-            else {
+            } else {
                 UIManager.setLookAndFeel(new FlatLightLaf());
             }
             com.formdev.flatlaf.FlatLaf.updateUI();
-        }
-        catch (UnsupportedLookAndFeelException e) {
+        } catch (UnsupportedLookAndFeelException e) {
             System.err.println("Not supported ui look and feel");
         }
     }
@@ -307,12 +304,10 @@ public class PreferencesDialog extends JDialog {
                 String combo = "";
                 if (e.isControlDown()) {
                     combo += "Ctrl + ";
-                }
-                else {
+                } else {
                     if (e.isShiftDown()) {
                         combo += "Shift + ";
-                    }
-                    else {
+                    } else {
                         if (e.isAltDown()) {
                             combo += "Alt + ";
                         }
@@ -363,7 +358,7 @@ public class PreferencesDialog extends JDialog {
         prefs.setUserPref(LegupPreferences.IMMEDIATE_FEEDBACK, Boolean.toString(immFeedback.isSelected()));
         prefs.setUserPref(LegupPreferences.COLOR_BLIND, Boolean.toString(colorBlind.isSelected()));
 
-        if(rulesFrame != null) {
+        if (rulesFrame != null) {
             rulesFrame.getCasePanel().updateRules();
             rulesFrame.getDirectRulePanel().updateRules();
             rulesFrame.getContradictionPanel().updateRules();

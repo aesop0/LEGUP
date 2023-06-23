@@ -40,8 +40,7 @@ public class MultipleNumbersContradictionRuleTest {
                 Point point = new Point(k, i);
                 if (point.equals(new Point(0, 0)) || point.equals(new Point(2, 0))) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

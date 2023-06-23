@@ -43,8 +43,7 @@ public class EmptyFieldDirectRule extends DirectRule {
 
         if (isForced(finalBoard, finalCell)) {
             return null;
-        }
-        else {
+        } else {
             return super.getInvalidUseOfRuleMessage() + ": This cell is not forced to be empty.";
         }
     }
@@ -79,8 +78,7 @@ public class EmptyFieldDirectRule extends DirectRule {
         }
         if (treeTentBoard.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return treeTentBoard;
         }
     }

@@ -41,15 +41,12 @@ public class BattleshipCellFactory extends ElementFactory {
                 BattleshipCell cell = new BattleshipCell(BattleshipType.getType(value), new Point(x, y));
                 cell.setIndex(y * height + x);
                 return cell;
-            }
-            else {
+            } else {
                 throw new InvalidFileFormatException("BattleShip Factory: unknown puzzleElement puzzleElement");
             }
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("BattleShip Factory: unknown value where integer expected");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             throw new InvalidFileFormatException("BattleShip Factory: could not find attribute(s)");
         }
     }

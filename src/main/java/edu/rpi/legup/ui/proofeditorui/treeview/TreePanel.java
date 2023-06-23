@@ -106,8 +106,7 @@ public class TreePanel extends JPanel {
         if (add.canExecute()) {
             add.execute();
             GameBoardFacade.getInstance().getHistory().pushChange(add);
-        }
-        else {
+        } else {
             updateError(add.getError());
         }
     }
@@ -119,8 +118,7 @@ public class TreePanel extends JPanel {
         if (del.canExecute()) {
             del.execute();
             GameBoardFacade.getInstance().getHistory().pushChange(del);
-        }
-        else {
+        } else {
             updateError(del.getError());
         }
     }
@@ -132,8 +130,7 @@ public class TreePanel extends JPanel {
         if (merge.canExecute()) {
             merge.execute();
             GameBoardFacade.getInstance().getHistory().pushChange(merge);
-        }
-        else {
+        } else {
             updateError(merge.getError());
         }
     }

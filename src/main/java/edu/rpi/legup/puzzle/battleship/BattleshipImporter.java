@@ -52,8 +52,7 @@ public class BattleshipImporter extends PuzzleImporter {
                 int size = Integer.valueOf(boardElement.getAttribute(
                         "size"));
                 battleShipBoard = new BattleshipBoard(size);
-            }
-            else {
+            } else {
                 if (!boardElement.getAttribute("width").isEmpty()
                         && !boardElement.getAttribute("height").isEmpty()) {
                     int width = Integer.valueOf(boardElement.getAttribute(
@@ -171,8 +170,7 @@ public class BattleshipImporter extends PuzzleImporter {
             }
 
             puzzle.setCurrentBoard(battleShipBoard);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("BattleShip Importer: " +
                     "unknown value where integer expected");
         }

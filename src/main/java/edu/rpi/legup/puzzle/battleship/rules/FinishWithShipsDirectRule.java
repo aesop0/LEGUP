@@ -50,8 +50,7 @@ public class FinishWithShipsDirectRule extends DirectRule {
 
         if (isForced(initBoard, initCell)) {
             return null;
-        }
-        else {
+        } else {
             return super.getInvalidUseOfRuleMessage() + ": This cell is not forced to" +
                     "be a ship segment.";
         }
@@ -108,8 +107,7 @@ public class FinishWithShipsDirectRule extends DirectRule {
 
         if (board.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return board;
         }
     }

@@ -64,8 +64,7 @@ public class FillinRowCaseRule extends CaseRule {
             group = tBoard.getRowCol(clueIndex, TreeTentType.UNKNOWN, false);
             tentsLeft = tBoard.getRowClues().get(clueIndex).getData() - tBoard.getRowCol(clueIndex, TreeTentType.TENT, false).size();
             cases = genCombinations(tBoard, group, tentsLeft, clueIndex, false);
-        }
-        else {
+        } else {
             group = tBoard.getRowCol(clueIndex, TreeTentType.UNKNOWN, true);
             tentsLeft = tBoard.getRowClues().get(clueIndex).getData() - tBoard.getRowCol(clueIndex, TreeTentType.TENT, true).size();
             cases = genCombinations(tBoard, group, tentsLeft, clueIndex, true);
@@ -93,8 +92,7 @@ public class FillinRowCaseRule extends CaseRule {
                     PuzzleElement change = temp.getPuzzleElement(c);
                     change.setData(TreeTentType.TENT);
                     temp.addModifiedData(change);
-                }
-                else {
+                } else {
                     PuzzleElement change = temp.getPuzzleElement(c);
                     change.setData(TreeTentType.GRASS);
                     temp.addModifiedData(change);
@@ -121,8 +119,7 @@ public class FillinRowCaseRule extends CaseRule {
         List<TreeTentCell> tents;
         if (isRow) {
             tents = board.getRowCol(index, TreeTentType.TENT, true);
-        }
-        else {
+        } else {
             tents = board.getRowCol(index, TreeTentType.TENT, false);
         }
 

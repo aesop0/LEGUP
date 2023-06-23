@@ -142,8 +142,7 @@ public class SkyscrapersView extends GridBoardView {
 
             if (board instanceof CaseBoard) {
                 setCasePickable();
-            }
-            else {
+            } else {
                 for (ElementView elementView : elementViews) {
                     elementView.setPuzzleElement(board.getPuzzleElement(elementView.getPuzzleElement()));
                     elementView.setShowCasePicker(false);

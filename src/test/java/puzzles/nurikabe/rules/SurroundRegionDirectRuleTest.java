@@ -56,8 +56,7 @@ public class SurroundRegionDirectRuleTest {
                 if (point.equals(cell1.getLocation()) || point.equals(cell2.getLocation()) ||
                         point.equals(cell3.getLocation()) || point.equals(cell4.getLocation())) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }
@@ -86,8 +85,7 @@ public class SurroundRegionDirectRuleTest {
                 Point point = new Point(k, i);
                 if (point.equals(cell1.getLocation()) || point.equals(cell2.getLocation())) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

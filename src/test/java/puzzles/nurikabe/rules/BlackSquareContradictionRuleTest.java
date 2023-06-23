@@ -46,8 +46,7 @@ public class BlackSquareContradictionRuleTest {
                 if (point.equals(cell1.getLocation()) || point.equals(cell2.getLocation()) ||
                         point.equals(cell3.getLocation()) || point.equals(cell4.getLocation())) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

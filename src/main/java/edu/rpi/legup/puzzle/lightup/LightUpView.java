@@ -22,8 +22,7 @@ public class LightUpView extends GridBoardView {
     static {
         try {
             lightImage = ImageIO.read(ClassLoader.getSystemClassLoader().getResource("edu/rpi/legup/images/lightup/light.png"));
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             LOGGER.error("Failed to open TreeTent images");
         }
     }

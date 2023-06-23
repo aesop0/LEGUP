@@ -55,8 +55,7 @@ public class MergeCommand extends PuzzleCommand {
             transition.setRule(new MergeRule());
             transition.setChildNode(mergedNode);
             mergedNode.setParent(transition);
-        }
-        else {
+        } else {
             mergedNode = transition.getChildNode();
         }
 
@@ -112,8 +111,7 @@ public class MergeCommand extends PuzzleCommand {
                     return CommandError.NO_CHILDREN.toString();
                 }
                 nodeList.add(nodeView.getTreeElement());
-            }
-            else {
+            } else {
                 return CommandError.SELECTION_CONTAINS_TRANSITION.toString();
             }
         }

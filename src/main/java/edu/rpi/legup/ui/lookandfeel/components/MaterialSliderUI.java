@@ -86,19 +86,16 @@ public class MaterialSliderUI extends BasicSliderUI {
 
             if (loaded) {
                 return slider.getInverted() ? right : left;
-            }
-            else {
+            } else {
                 return slider.getInverted() ? left : right;
             }
-        }
-        else {
+        } else {
             Line top = new Line(thumbRect.x + thumbRect.width / 2, trackRect.y, thumbRect.x + thumbRect.width / 2, thumbRect.y + thumbRect.height / 2);
             Line bottom = new Line(thumbRect.x + thumbRect.width / 2, thumbRect.y + thumbRect.height / 2, thumbRect.x + thumbRect.width / 2, trackRect.y + trackRect.height);
 
             if (loaded) {
                 return slider.getInverted() ? top : bottom;
-            }
-            else {
+            } else {
                 return slider.getInverted() ? bottom : top;
             }
         }

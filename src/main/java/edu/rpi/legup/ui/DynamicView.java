@@ -50,8 +50,7 @@ public class DynamicView extends JPanel {
     private JPanel setUpZoomer(DynamicViewType type) {
         if (type == DynamicViewType.BOARD) {
             return setUpBoardZoomer();
-        }
-        else {
+        } else {
             if (type == DynamicViewType.PROOF_TREE) {
                 return setUpProofTreeZoomer();
             }
@@ -167,8 +166,7 @@ public class DynamicView extends JPanel {
             zoomWrapper.setLayout(new BorderLayout());
             zoomWrapper.add(status, WEST);
             zoomWrapper.add(zoomer, EAST);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return zoomWrapper;

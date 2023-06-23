@@ -44,8 +44,7 @@ public class LastCampingSpotDirectRule extends DirectRule {
 
         if (isForced(finalBoard, finalCell)) {
             return null;
-        }
-        else {
+        } else {
             return super.getInvalidUseOfRuleMessage() + ": This cell is not forced to be tent.";
         }
     }
@@ -58,8 +57,7 @@ public class LastCampingSpotDirectRule extends DirectRule {
             if (unkAroundTree.size() == 0) {
                 if (tntAroundTree.size() == 1) {
                     return true;
-                }
-                else {
+                } else {
                     for (TreeTentCell t : tntAroundTree) {
                         if (t == cell) {
                             continue;
@@ -94,8 +92,7 @@ public class LastCampingSpotDirectRule extends DirectRule {
         }
         if (treeTentBoard.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return treeTentBoard;
         }
     }

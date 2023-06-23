@@ -13,31 +13,25 @@ public class NurikabeController extends ElementController {
         if (e.getButton() == MouseEvent.BUTTON1) {
             if (e.isControlDown()) {
                 this.boardView.getSelectionPopupMenu().show(boardView, this.boardView.getCanvas().getX() + e.getX(), this.boardView.getCanvas().getY() + e.getY());
-            }
-            else {
+            } else {
                 if (cell.getData() == -2) {
                     data.setData(0);
-                }
-                else {
+                } else {
                     if (cell.getData() == 0) {
                         data.setData(-1);
-                    }
-                    else {
+                    } else {
                         data.setData(-2);
                     }
                 }
             }
-        }
-        else {
+        } else {
             if (e.getButton() == MouseEvent.BUTTON3) {
                 if (cell.getData() == -2) {
                     data.setData(-1);
-                }
-                else {
+                } else {
                     if (cell.getData() == 0) {
                         data.setData(-2);
-                    }
-                    else {
+                    } else {
                         data.setData(0);
                     }
                 }

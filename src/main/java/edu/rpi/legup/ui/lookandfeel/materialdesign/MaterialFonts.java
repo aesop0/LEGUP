@@ -33,8 +33,7 @@ public class MaterialFonts {
 
         try (InputStream inputStream = MaterialFonts.class.getResourceAsStream(fontPath)) {
             return Font.createFont(Font.TRUETYPE_FONT, inputStream).deriveFont(fontSettings);
-        }
-        catch (IOException | FontFormatException e) {
+        } catch (IOException | FontFormatException e) {
             e.printStackTrace();
             throw new RuntimeException("Font " + fontPath + " wasn't loaded");
         }
@@ -47,8 +46,7 @@ public class MaterialFonts {
 
         try (InputStream inputStream = MaterialFonts.class.getResourceAsStream("/edu/rpi/legup/fonts/Roboto/Roboto-Regular.ttf")) {
             return Font.createFont(Font.TRUETYPE_FONT, inputStream).deriveFont(map);
-        }
-        catch (IOException | FontFormatException e) {
+        } catch (IOException | FontFormatException e) {
             e.printStackTrace();
             throw new RuntimeException("Font regular wasn't loaded");
         }

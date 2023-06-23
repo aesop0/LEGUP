@@ -47,8 +47,7 @@ public class TooManyTentsContradictionRuleTest {
                 Point point = new Point(k, i);
                 if (point.equals(cell1.getLocation()) || point.equals(cell2.getLocation())) {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     // The TooManyTentsContradictionRule checks the col and row the cell is in
                     // Therefore, even if a cell(0, 0) is empty, it follows the contradiction rule because
                     // the row it is in follows the contradiciton rule. (And because cell(1, 0) has tent row tent total is 0)

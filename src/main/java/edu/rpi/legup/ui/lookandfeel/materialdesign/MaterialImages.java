@@ -34,8 +34,7 @@ public class MaterialImages {
     private static BufferedImage loadImg(String imgPath) {
         try (InputStream inputStream = MaterialImages.class.getResourceAsStream(imgPath)) {
             return ImageIO.read(inputStream);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Image " + imgPath + " wasn't loaded");
         }

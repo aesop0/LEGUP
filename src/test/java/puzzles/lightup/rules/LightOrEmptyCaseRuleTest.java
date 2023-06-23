@@ -13,6 +13,7 @@ import edu.rpi.legup.model.gameboard.Board;
 import edu.rpi.legup.puzzle.lightup.LightUpCell;
 import edu.rpi.legup.puzzle.lightup.LightUpCellType;
 import org.junit.Assert;
+
 import java.util.ArrayList;
 
 public class LightOrEmptyCaseRuleTest {
@@ -31,11 +32,11 @@ public class LightOrEmptyCaseRuleTest {
         TestUtilities.importTestBoard("puzzles/lightup/rules/LightOrEmptyCaseRule/LightOrEmpty", lightUp);
         TreeNode rootNode = lightUp.getTree().getRootNode();
         TreeTransition transition = rootNode.getChildren().get(0);
-        transition.setRule(RULE); 
+        transition.setRule(RULE);
 
         //get all new board states using caserule builtin function
         LightUpBoard b = (LightUpBoard) transition.getBoard();
-        LightUpCell numbered_cell = b.getCell(0,0); //the focus cell
+        LightUpCell numbered_cell = b.getCell(0, 0); //the focus cell
         ArrayList<Board> cases = RULE.getCases(b, numbered_cell);
 
         //assert correct number of cases
@@ -47,20 +48,20 @@ public class LightOrEmptyCaseRuleTest {
         LightUpBoard case2 = ((LightUpBoard) transition.getBoard()).copy();
 
         //change the cells of the first new case board
-        change_cell = case1.getCell(0,0);
+        change_cell = case1.getCell(0, 0);
         change_cell.setData(LightUpCellType.BULB.value);
         //case1.addModifiedData(change_cell);
 
-        change_cell = case1.getCell(1,1);
+        change_cell = case1.getCell(1, 1);
         change_cell.setData(LightUpCellType.BULB.value);
         //case1.addModifiedData(change_cell);
 
         //change the cells of the second new case board
-        change_cell = case2.getCell(0,1);
+        change_cell = case2.getCell(0, 1);
         change_cell.setData(LightUpCellType.BULB.value);
         //case2.addModifiedData(change_cell);
 
-        change_cell = case2.getCell(1,0);
+        change_cell = case2.getCell(1, 0);
         change_cell.setData(LightUpCellType.BULB.value);
         //case2.addModifiedData(change_cell);
 

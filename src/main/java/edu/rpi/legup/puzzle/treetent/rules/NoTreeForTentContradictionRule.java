@@ -51,8 +51,7 @@ public class NoTreeForTentContradictionRule extends ContradictionRule {
         int adjTree = adjTrees.size();
         if (adjTree == 0) {
             return null;
-        }
-        else {
+        } else {
             return super.getNoContradictionMessage();
         }
     }

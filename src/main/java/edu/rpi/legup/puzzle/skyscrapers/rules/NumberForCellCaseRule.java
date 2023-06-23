@@ -89,8 +89,7 @@ public class NumberForCellCaseRule extends CaseRule {
         if (childTransitions.size() == 0) {
             //System.out.println("0");
             return "This case rule must have at least one child.";
-        }
-        else {
+        } else {
             if (childTransitions.size() != getCases(transition.getBoard(), childTransitions.get(0).getBoard().getModifiedData().iterator().next()).size()) {
                 return "Wrong number of children.";
             }

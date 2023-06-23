@@ -42,8 +42,7 @@ public class CannotLightACellContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(i, location.y);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.UNKNOWN && !c.isLite()) {
                     hor_count += 1;
                 }
@@ -53,8 +52,7 @@ public class CannotLightACellContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(i, location.y);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.UNKNOWN && !c.isLite()) {
                     hor_count += 1;
                 }
@@ -64,8 +62,7 @@ public class CannotLightACellContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(location.x, i);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.UNKNOWN && !c.isLite()) {
                     ver_count += 1;
                 }
@@ -75,8 +72,7 @@ public class CannotLightACellContradictionRule extends ContradictionRule {
             LightUpCell c = lightUpBoard.getCell(location.x, i);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.UNKNOWN && !c.isLite()) {
                     ver_count += 1;
                 }

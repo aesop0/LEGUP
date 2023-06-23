@@ -67,8 +67,7 @@ public class TreeTransition extends TreeElement {
                     board.removeModifiedData(element);
                     board.notifyChange(element);
                     changed = true;
-                }
-                else {
+                } else {
                     if (!lcaElement.equalsData(element)) {
                         mergedData.setData(element.getData());
                         board.addModifiedData(mergedData);
@@ -85,8 +84,7 @@ public class TreeTransition extends TreeElement {
                     }
                 }
             }
-        }
-        else {
+        } else {
             if (childNode != null) {
                 board.notifyChange(element);
                 childNode.getBoard().notifyChange(element.copy());
@@ -126,8 +124,7 @@ public class TreeTransition extends TreeElement {
                     board.removeModifiedData(element);
                     board.notifyDeletion(element);
                     changed = true;
-                }
-                else {
+                } else {
                     if (!lcaElement.equalsData(element)) {
                         mergedData.setData(element.getData());
                         board.addModifiedData(mergedData);
@@ -142,8 +139,7 @@ public class TreeTransition extends TreeElement {
                     }
                 }
             }
-        }
-        else {
+        } else {
             if (childNode != null) {
                 board.notifyAddition(element);
                 childNode.getBoard().notifyAddition(element.copy());
@@ -181,8 +177,7 @@ public class TreeTransition extends TreeElement {
                     board.removeModifiedData(element);
                     board.notifyDeletion(element);
                     changed = true;
-                }
-                else {
+                } else {
                     if (!lcaElement.equalsData(element)) {
                         mergedData.setData(element.getData());
                         board.addModifiedData(mergedData);
@@ -197,8 +192,7 @@ public class TreeTransition extends TreeElement {
                     }
                 }
             }
-        }
-        else {
+        } else {
             if (childNode != null) {
                 board.notifyDeletion(element);
                 childNode.getBoard().notifyDeletion(element.copy());
@@ -220,12 +214,10 @@ public class TreeTransition extends TreeElement {
     public boolean isContradictoryBranch() {
         if (isJustified() && isCorrect() && rule.getRuleType() == RuleType.CONTRADICTION) {
             return true;
-        }
-        else {
+        } else {
             if (childNode == null) {
                 return false;
-            }
-            else {
+            } else {
                 return childNode.isContradictoryBranch() && isJustified() && isCorrect();
             }
         }

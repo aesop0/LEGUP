@@ -109,8 +109,7 @@ public class LastVisibleCellDirectRule extends DirectRule {
         System.out.println(modBoard.getModifiedData().isEmpty());
         if (modBoard.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return modBoard;
         }
     }

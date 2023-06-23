@@ -44,11 +44,9 @@ public class SudokuCellFactory extends ElementFactory {
             SudokuCell cell = new SudokuCell(value, new Point(x, y), groupIndex, size);
             cell.setIndex(y * size + x);
             return cell;
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("Sudoku Factory: unknown value where integer expected");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             throw new InvalidFileFormatException("Sudoku Factory: could not find attribute(s)");
         }
     }

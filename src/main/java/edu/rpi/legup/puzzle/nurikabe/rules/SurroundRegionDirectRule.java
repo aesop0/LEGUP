@@ -46,8 +46,7 @@ public class SurroundRegionDirectRule extends DirectRule {
 
         if (contraRule.checkContradiction(modified) == null) {
             return null;
-        }
-        else {
+        } else {
             return "Does not follow from this rule at this index";
         }
     }

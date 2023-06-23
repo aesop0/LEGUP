@@ -41,8 +41,7 @@ public class NoNumbersContradictionRuleTest {
                 Point point = new Point(k, i);
                 if (point.equals(location)) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

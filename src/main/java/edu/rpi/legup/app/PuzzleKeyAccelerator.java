@@ -68,8 +68,7 @@ public class PuzzleKeyAccelerator implements KeyListener {
             if (rule.getRuleType() == RuleType.CASE) {
                 // TODO: review this line of code and figure out what it's supposed to do (remove if necessary)
 //                handleCaseRule((CaseRule)rule);
-            }
-            else {
+            } else {
                 if (rule.getRuleType() == RuleType.CONTRADICTION) {
                     TreeViewSelection selection = treeView.getSelection();
 
@@ -77,20 +76,17 @@ public class PuzzleKeyAccelerator implements KeyListener {
                     if (validate.canExecute()) {
                         getInstance().getHistory().pushChange(validate);
                         validate.execute();
-                    }
-                    else {
+                    } else {
                         update = validate.getError();
                     }
-                }
-                else {
+                } else {
                     TreeViewSelection selection = treeView.getSelection();
 
                     ICommand validate = new ValidateDirectRuleCommand(selection, (DirectRule) rule);
                     if (validate.canExecute()) {
                         getInstance().getHistory().pushChange(validate);
                         validate.execute();
-                    }
-                    else {
+                    } else {
                         update = validate.getError();
                     }
                 }

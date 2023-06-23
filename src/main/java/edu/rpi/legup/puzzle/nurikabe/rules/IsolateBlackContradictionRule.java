@@ -48,8 +48,7 @@ public class IsolateBlackContradictionRule extends ContradictionRule {
                 if (c.getType() == NurikabeType.BLACK) {
                     if (oneRegion) {
                         return null;
-                    }
-                    else {
+                    } else {
                         oneRegion = true;
                         break;
                     }

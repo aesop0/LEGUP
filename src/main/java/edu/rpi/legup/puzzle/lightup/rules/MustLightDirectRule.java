@@ -45,8 +45,7 @@ public class MustLightDirectRule extends DirectRule {
 
         if (isForced) {
             return null;
-        }
-        else {
+        } else {
             return super.getInvalidUseOfRuleMessage() + ": This cell can be lit by another cell";
         }
     }
@@ -66,8 +65,7 @@ public class MustLightDirectRule extends DirectRule {
             LightUpCell c = modifiedBoard.getCell(i, loc.y);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.EMPTY &&
                         !c.isLite() && cannotLite.checkContradictionAt(modifiedBoard, c) == null) {
                     return true;
@@ -79,8 +77,7 @@ public class MustLightDirectRule extends DirectRule {
             LightUpCell c = modifiedBoard.getCell(i, loc.y);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.EMPTY &&
                         !c.isLite() && cannotLite.checkContradictionAt(modifiedBoard, c) == null) {
                     return true;
@@ -92,8 +89,7 @@ public class MustLightDirectRule extends DirectRule {
             LightUpCell c = modifiedBoard.getCell(loc.x, i);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.EMPTY &&
                         !c.isLite() && cannotLite.checkContradictionAt(modifiedBoard, c) == null) {
                     return true;
@@ -105,8 +101,7 @@ public class MustLightDirectRule extends DirectRule {
             LightUpCell c = modifiedBoard.getCell(loc.x, i);
             if (c.getType() == LightUpCellType.BLACK || c.getType() == LightUpCellType.NUMBER) {
                 break;
-            }
-            else {
+            } else {
                 if (c.getType() == LightUpCellType.EMPTY &&
                         !c.isLite() && cannotLite.checkContradictionAt(modifiedBoard, c) == null) {
                     return true;
@@ -141,8 +136,7 @@ public class MustLightDirectRule extends DirectRule {
         }
         if (lightUpBoard.getModifiedData().isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return lightUpBoard;
         }
     }

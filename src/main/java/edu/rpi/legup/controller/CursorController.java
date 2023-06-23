@@ -41,8 +41,7 @@ public class CursorController {
             try {
                 timer.schedule(timerTask, DELAY);
                 mainActionListener.actionPerformed(e);
-            }
-            finally {
+            } finally {
                 timer.cancel();
                 component.setCursor(DEFAULT_CURSOR);
             }

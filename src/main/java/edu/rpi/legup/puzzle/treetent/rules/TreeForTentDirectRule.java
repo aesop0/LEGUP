@@ -40,29 +40,24 @@ public class TreeForTentDirectRule extends DirectRule {
         if (line.getC1().getType() == TreeTentType.TREE && line.getC2().getType() == TreeTentType.TENT) {
             tree = line.getC1();
             tent = line.getC2();
-        }
-        else {
+        } else {
             if (line.getC2().getType() == TreeTentType.TREE && line.getC1().getType() == TreeTentType.TENT) {
                 tree = line.getC2();
                 tent = line.getC1();
-            }
-            else {
+            } else {
                 return super.getInvalidUseOfRuleMessage() + ": This line must connect a tree to a tent.";
             }
         }
         int forced = isForced(board, tree, tent, line);
         if (forced == 1) {
             return null;
-        }
-        else {
+        } else {
             if (forced == -1) {
                 return super.getInvalidUseOfRuleMessage() + ": This tent already has a link";
-            }
-            else {
+            } else {
                 if (forced == -2) {
                     return super.getInvalidUseOfRuleMessage() + ": This tree already has a link";
-                }
-                else {
+                } else {
                     return super.getInvalidUseOfRuleMessage() + ": This tree and tent don't need to be linked.";
                 }
             }
@@ -86,8 +81,7 @@ public class TreeForTentDirectRule extends DirectRule {
                     }
                     toRemove.add(c);
 
-                }
-                else {
+                } else {
                     if (l.getC2().getLocation().equals(c.getLocation())) {
                         if (l.getC1().getLocation().equals(tent.getLocation())) {
                             return -1;
@@ -103,8 +97,7 @@ public class TreeForTentDirectRule extends DirectRule {
         }
         if (adjTrees.size() == 0) {
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
     }

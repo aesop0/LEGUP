@@ -37,16 +37,14 @@ public class PossibleNumberCaseBoard extends CaseBoard {
                     return true;
                 }
             }
-        }
-        else {
+        } else {
             if (e.isControlDown()) {
                 for (int c : pickableCols) {
                     if (c == sudokuCell.getLocation().x) {
                         return true;
                     }
                 }
-            }
-            else {
+            } else {
                 for (int r : pickableRegions) {
                     if (r == sudokuCell.getGroupIndex()) {
                         return true;

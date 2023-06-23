@@ -75,8 +75,7 @@ public class TreeTentBoard extends GridBoard {
     public TreeTentClue getClue(int x, int y) {
         if (x == getWidth() && 0 <= y && y < getHeight()) {
             return rowClues.get(y);
-        }
-        else {
+        } else {
             if (y == getHeight() && 0 <= x && x < getWidth()) {
                 return colClues.get(x);
             }
@@ -189,8 +188,7 @@ public class TreeTentBoard extends GridBoard {
                     list.add(cell);
                 }
             }
-        }
-        else {
+        } else {
             for (int i = 0; i < dimension.width; i++) {
                 TreeTentCell cell = getCell(index, i);
                 if (cell.getType() == type) {

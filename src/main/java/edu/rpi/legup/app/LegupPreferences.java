@@ -94,12 +94,10 @@ public class LegupPreferences {
     public boolean getUserPrefAsBool(String key) {
         if (preferencesMap.get(key).equalsIgnoreCase(Boolean.toString(true))) {
             return true;
-        }
-        else {
+        } else {
             if (preferencesMap.get(key).equalsIgnoreCase(Boolean.toString(false))) {
                 return false;
-            }
-            else {
+            } else {
                 throw new RuntimeException("Cannot get user preference - " + key);
             }
         }

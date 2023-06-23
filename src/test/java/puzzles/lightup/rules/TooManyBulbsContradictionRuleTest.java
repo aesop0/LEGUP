@@ -19,13 +19,14 @@ public class TooManyBulbsContradictionRuleTest {
     public static void setUp() {
         lightUp = new LightUp();
     }
+
     @Test
     //complex extensive toofew test
     public void TooFewBulbsContradictionRule() throws InvalidFileFormatException {
         TestUtilities.importTestBoard("puzzles/lightup/rules/TooManyBulbsContradictionRule/FullTooManyTest", lightUp);
         TreeNode rootNode = lightUp.getTree().getRootNode();
         TreeTransition transition = rootNode.getChildren().get(0);
-        transition.setRule(RULE); 
+        transition.setRule(RULE);
 
         LightUpBoard board = (LightUpBoard) transition.getBoard();
         //confirm there is a contradiction somewhere on the board
@@ -46,7 +47,7 @@ public class TooManyBulbsContradictionRuleTest {
         TestUtilities.importTestBoard("puzzles/lightup/rules/TooManyBulbsContradictionRule/TooMany", lightUp);
         TreeNode rootNode = lightUp.getTree().getRootNode();
         TreeTransition transition = rootNode.getChildren().get(0);
-        transition.setRule(RULE); 
+        transition.setRule(RULE);
 
         LightUpBoard board = (LightUpBoard) transition.getBoard();
 

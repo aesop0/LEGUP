@@ -100,8 +100,7 @@ public class MaterialUITimer implements MouseListener, ActionListener {
         if (forward) {
             component.setBackground(nextColor());
             ++alpha;
-        }
-        else {
+        } else {
             component.setBackground(previousColor());
             --alpha;
         }

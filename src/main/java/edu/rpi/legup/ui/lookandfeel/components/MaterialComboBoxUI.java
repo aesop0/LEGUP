@@ -39,8 +39,7 @@ public class MaterialComboBoxUI extends BasicComboBoxUI {
         JButton button;
         if (icon != null) {
             button = new JButton(icon);
-        }
-        else {
+        } else {
             button = new BasicArrowButton(SwingConstants.SOUTH);
         }
         button.setFocusPainted(false);

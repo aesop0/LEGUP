@@ -44,11 +44,9 @@ public class MasyuCellFactory extends ElementFactory {
             MasyuCell cell = new MasyuCell(MasyuType.convertToMasyuType(value), new Point(x, y));
             cell.setIndex(y * height + x);
             return cell;
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("Masyu Factory: unknown value where integer expected");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             throw new InvalidFileFormatException("Masyu Factory: could not find attribute(s)");
         }
     }

@@ -27,14 +27,14 @@ public class LegupUI extends JFrame implements WindowListener {
 
     /**
      * Identifies operating system
+     *
      * @return operating system, either mac or win
      */
     public static String getOS() {
         String os = System.getProperty("os.name").toLowerCase();
         if (os.contains("mac")) {
             os = "mac";
-        }
-        else {
+        } else {
             os = "win";
         }
         return os;
@@ -51,12 +51,10 @@ public class LegupUI extends JFrame implements WindowListener {
         try {
             if (Boolean.valueOf(prefs.getUserPref(LegupPreferences.DARK_MODE))) {
                 UIManager.setLookAndFeel(new FlatDarkLaf());
-            }
-            else {
+            } else {
                 UIManager.setLookAndFeel(new FlatLightLaf());
             }
-        }
-        catch (UnsupportedLookAndFeelException e) {
+        } catch (UnsupportedLookAndFeelException e) {
             System.err.println("Not supported ui look and feel");
         }
 
@@ -159,12 +157,10 @@ public class LegupUI extends JFrame implements WindowListener {
         if (GameBoardFacade.getInstance().getHistory().getIndex() > -1) {
             if (noquit("Exiting LEGUP?")) {
                 this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-            }
-            else {
+            } else {
                 this.setDefaultCloseOperation(EXIT_ON_CLOSE);
             }
-        }
-        else {
+        } else {
             this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
     }

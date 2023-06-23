@@ -24,8 +24,7 @@ public class TreeTentView extends GridBoardView {
             TREE = ImageIO.read(ClassLoader.getSystemResourceAsStream("edu/rpi/legup/images/treetent/tree.png"));
             GRASS = ImageIO.read(ClassLoader.getSystemResourceAsStream("edu/rpi/legup/images/treetent/grass.png"));
             TENT = ImageIO.read(ClassLoader.getSystemResourceAsStream("edu/rpi/legup/images/treetent/tent.png"));
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             LOGGER.error("Failed to open TreeTent images");
         }
     }
@@ -167,8 +166,7 @@ public class TreeTentView extends GridBoardView {
         TreeTentBoard treeTentBoard;
         if (board instanceof CaseBoard) {
             treeTentBoard = (TreeTentBoard) ((CaseBoard) board).getBaseBoard();
-        }
-        else {
+        } else {
             treeTentBoard = (TreeTentBoard) board;
         }
 

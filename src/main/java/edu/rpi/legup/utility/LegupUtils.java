@@ -22,7 +22,7 @@ public class LegupUtils {
      * @param packageName The base package
      * @return The classes
      * @throws ClassNotFoundException if class is not in package
-     * @throws IOException if file is not found
+     * @throws IOException            if file is not found
      */
     public static Class[] getClasses(String packageName)
             throws ClassNotFoundException, IOException {
@@ -69,8 +69,7 @@ public class LegupUtils {
             if (file.isDirectory()) {
                 assert !file.getName().contains(".");
                 classes.addAll(findClasses(file, packageName + "." + file.getName()));
-            }
-            else {
+            } else {
                 if (file.getName().endsWith(".class")) {
                     classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
                 }

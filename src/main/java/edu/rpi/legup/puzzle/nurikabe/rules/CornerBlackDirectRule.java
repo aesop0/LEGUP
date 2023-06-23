@@ -71,8 +71,7 @@ public class CornerBlackDirectRule extends DirectRule {
                                 if (pCell.getType() == NurikabeType.NUMBER) {
                                     if (regionNumber == 0) {
                                         regionNumber = pCell.getData();
-                                    }
-                                    else {
+                                    } else {
                                         return "There is a MultipleNumbers Contradiction on the board.";
                                     }
                                 }

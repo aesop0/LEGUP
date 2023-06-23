@@ -107,14 +107,12 @@ public class ElementController implements MouseListener, MouseMotionListener, Ac
                     if (treePanel != null) {
                         treePanel.updateError("");
                     }
-                }
-                else {
+                } else {
                     if (treePanel != null) {
                         treePanel.updateError(autoCaseRuleCommand.getError());
                     }
                 }
-            }
-            else {
+            } else {
                 if (selection != null) {
                     ICommand edit = new EditDataCommand(elementView, selection, e);
                     if (edit.canExecute()) {
@@ -123,8 +121,7 @@ public class ElementController implements MouseListener, MouseMotionListener, Ac
                         if (treePanel != null) {
                             treePanel.updateError("");
                         }
-                    }
-                    else {
+                    } else {
                         if (treePanel != null) {
                             treePanel.updateError(edit.getError());
                         }
@@ -183,8 +180,7 @@ public class ElementController implements MouseListener, MouseMotionListener, Ac
                 }
                 if (error != null) {
                     dynamicView.updateError(error);
-                }
-                else {
+                } else {
                     dynamicView.resetStatus();
                 }
             }
@@ -258,8 +254,7 @@ public class ElementController implements MouseListener, MouseMotionListener, Ac
                 }
                 if (error != null) {
                     dynamicView.updateError(error);
-                }
-                else {
+                } else {
                     dynamicView.resetStatus();
                 }
             }
@@ -299,8 +294,7 @@ public class ElementController implements MouseListener, MouseMotionListener, Ac
 
         if (puzzleElement.equalsData(prevBord.getPuzzleElement(puzzleElement))) {
             puzzleElement.setModified(false);
-        }
-        else {
+        } else {
             puzzleElement.setModified(true);
         }
 

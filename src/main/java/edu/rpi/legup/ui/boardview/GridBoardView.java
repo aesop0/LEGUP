@@ -13,8 +13,8 @@ public class GridBoardView extends BoardView {
     /**
      * GridBoardView Constructor creates a GridBoardView object using the controller handle the ui events
      *
-     * @param boardController controller that handles the ui events
-     * @param gridSize dimension of the grid
+     * @param boardController   controller that handles the ui events
+     * @param gridSize          dimension of the grid
      * @param elementController controller that handles the ui events
      */
     public GridBoardView(BoardController boardController, ElementController elementController, Dimension gridSize) {

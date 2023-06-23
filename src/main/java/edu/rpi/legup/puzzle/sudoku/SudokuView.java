@@ -81,8 +81,7 @@ public class SudokuView extends GridBoardView {
                 ElementView element = elementViews.get(i * gridSize.height + k);
                 if (!element.isHover()) {
                     element.draw(graphics2D);
-                }
-                else {
+                } else {
                     hover = element;
                 }
             }
@@ -107,8 +106,7 @@ public class SudokuView extends GridBoardView {
                 ElementView element = elementViews.get(i * gridSize.height + k);
                 if (!element.isHover()) {
                     element.draw(graphics2D);
-                }
-                else {
+                } else {
                     hover = element;
                 }
             }

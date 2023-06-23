@@ -21,8 +21,7 @@ public class TreeTentExporter extends PuzzleExporter {
         TreeTentBoard board;
         if (puzzle.getTree() != null) {
             board = (TreeTentBoard) puzzle.getTree().getRootNode().getBoard();
-        }
-        else {
+        } else {
             board = (TreeTentBoard) puzzle.getBoardView().getBoard();
         }
 

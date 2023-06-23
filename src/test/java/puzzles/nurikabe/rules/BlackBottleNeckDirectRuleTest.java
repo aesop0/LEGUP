@@ -13,6 +13,7 @@ import edu.rpi.legup.save.InvalidFileFormatException;
 import legup.TestUtilities;
 import edu.rpi.legup.model.tree.TreeNode;
 import edu.rpi.legup.model.tree.TreeTransition;
+
 import java.awt.*;
 
 
@@ -34,21 +35,20 @@ public class BlackBottleNeckDirectRuleTest {
         TreeTransition transition = rootNode.getChildren().get(0);
         transition.setRule(RULE);
 
-        NurikabeBoard board = (NurikabeBoard)transition.getBoard();
-        NurikabeCell cell = board.getCell(2,1);
+        NurikabeBoard board = (NurikabeBoard) transition.getBoard();
+        NurikabeCell cell = board.getCell(2, 1);
         cell.setData(NurikabeType.BLACK.toValue());
 
         board.addModifiedData(cell);
 
         Assert.assertNull(RULE.checkRule(transition));
 
-        for(int i = 0; i < board.getHeight(); i++) {
-            for(int k = 0; k < board.getWidth(); k++) {
-                Point point  = new Point(k, i);
-                if(point.equals(cell.getLocation())) {
+        for (int i = 0; i < board.getHeight(); i++) {
+            for (int k = 0; k < board.getWidth(); k++) {
+                Point point = new Point(k, i);
+                if (point.equals(cell.getLocation())) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

@@ -41,8 +41,7 @@ public class TreeTentCellFactory extends ElementFactory {
                 TreeTentCell cell = new TreeTentCell(TreeTentType.valueOf(value), new Point(x, y));
                 cell.setIndex(y * height + x);
                 return cell;
-            }
-            else {
+            } else {
                 if (node.getNodeName().equalsIgnoreCase("line")) {
                     int x1 = Integer.valueOf(attributeList.getNamedItem("x1").getNodeValue());
                     int y1 = Integer.valueOf(attributeList.getNamedItem("y1").getNodeValue());
@@ -55,16 +54,13 @@ public class TreeTentCellFactory extends ElementFactory {
                     TreeTentCell c1 = treeTentBoard.getCell(x1, y1);
                     TreeTentCell c2 = treeTentBoard.getCell(x2, y2);
                     return new TreeTentLine(c1, c2);
-                }
-                else {
+                } else {
                     throw new InvalidFileFormatException("TreeTent Factory: unknown puzzleElement puzzleElement");
                 }
             }
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("TreeTent Factory: unknown value where integer expected");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             throw new InvalidFileFormatException("TreeTent Factory: could not find attribute(s)");
         }
     }
@@ -88,8 +84,7 @@ public class TreeTentCellFactory extends ElementFactory {
             cellElement.setAttribute("y", String.valueOf(loc.y));
 
             return cellElement;
-        }
-        else {
+        } else {
             org.w3c.dom.Element lineElement = document.createElement("line");
 
             TreeTentLine line = (TreeTentLine) puzzleElement;

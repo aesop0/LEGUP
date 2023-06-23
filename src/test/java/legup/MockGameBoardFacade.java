@@ -11,8 +11,7 @@ public class MockGameBoardFacade extends GameBoardFacade {
         Config config = null;
         try {
             config = new Config();
-        }
-        catch (InvalidConfigException e) {
+        } catch (InvalidConfigException e) {
             System.exit(1);
         }
         setConfig(config);

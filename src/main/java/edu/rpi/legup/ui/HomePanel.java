@@ -94,8 +94,7 @@ public class HomePanel extends LegupPanel {
         contribute.addActionListener(l -> {
             try {
                 java.awt.Desktop.getDesktop().browse(URI.create("https://github.com/Bram-Hub/Legup"));
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 LOGGER.error("Can't open web page");
             }
         });
@@ -175,8 +174,7 @@ public class HomePanel extends LegupPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     use_xml_to_check();
-                }
-                catch (Exception ex) {
+                } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
                 System.out.println("finished checking the folder");
@@ -250,14 +248,12 @@ public class HomePanel extends LegupPanel {
                             if (puzzle.isPuzzleComplete()) {
                                 writer.append("Solved");
                                 System.out.println(fileEntry.getName() + "  solved");
-                            }
-                            else {
+                            } else {
                                 writer.append("Not solved");
                                 System.out.println(fileEntry.getName() + "  not solved");
                             }
                             writer.append("\n");
-                        }
-                        catch (InvalidFileFormatException e) {
+                        } catch (InvalidFileFormatException e) {
                             LOGGER.error(e.getMessage());
                         }
                     }
@@ -267,8 +263,7 @@ public class HomePanel extends LegupPanel {
                     writer.append("\n");
                 }
             }
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             LOGGER.error(ex.getMessage());
 
             this.buttons[3].addActionListener((ActionEvent e) -> checkProofAll());
@@ -368,25 +363,20 @@ public class HomePanel extends LegupPanel {
                                         if (value.equals("true")) {
                                             try {
                                                 writer.write("Solve\n");
-                                            }
-                                            catch (IOException e) {
+                                            } catch (IOException e) {
                                                 throw new RuntimeException(e);
                                             }
-                                        }
-                                        else {
+                                        } else {
                                             if (value.equals("false")) {
                                                 try {
                                                     writer.write("Unsolve\n");
-                                                }
-                                                catch (IOException e) {
+                                                } catch (IOException e) {
                                                     throw new RuntimeException(e);
                                                 }
-                                            }
-                                            else {
+                                            } else {
                                                 try {
                                                     writer.write("Ungradeale\n");
-                                                }
-                                                catch (IOException e) {
+                                                } catch (IOException e) {
                                                     throw new RuntimeException(e);
                                                 }
                                             }
@@ -410,8 +400,7 @@ public class HomePanel extends LegupPanel {
                                 System.out.println(new String(ch, start, length));
                             }
                         });
-                    }
-                    else {
+                    } else {
                         writer.write("wrong file ungradable");
                     }
                     writer.write("\n");
@@ -419,8 +408,7 @@ public class HomePanel extends LegupPanel {
             }
 
 
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             LOGGER.error(ex.getMessage());
         }
     }
@@ -432,8 +420,7 @@ public class HomePanel extends LegupPanel {
             DocumentBuilder builder = factory.newDocumentBuilder();
             builder.parse(file);
             flag = true;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             flag = false;
         }
         return flag;
@@ -477,8 +464,7 @@ public class HomePanel extends LegupPanel {
                 String path = folderEntry.getName();
                 traverseDir1(folderEntry, writer, path);
             }
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             LOGGER.error(ex.getMessage());
         }
         JOptionPane.showMessageDialog(null, "Batch grading complete.");
@@ -525,16 +511,13 @@ public class HomePanel extends LegupPanel {
                     writer.append(puzzle.getName()).append(",");
                     if (puzzle.isPuzzleComplete()) {
                         writer.append("1,Solved\n");
-                    }
-                    else {
+                    } else {
                         writer.append("0,Unsolved\n");
                     }
-                }
-                catch (InvalidFileFormatException e) {
+                } catch (InvalidFileFormatException e) {
                     writer.append(fName).append(",Invalid,,Ungradeable\n");
                 }
-            }
-            else {
+            } else {
                 LOGGER.debug("Failed to run sim");
             }
         }
@@ -629,8 +612,7 @@ public class HomePanel extends LegupPanel {
                 String path = folderEntry.getName();
                 traverseDir(folderEntry, writer, path);
             }
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             LOGGER.error(ex.getMessage());
         }
         JOptionPane.showMessageDialog(null, "Batch grading complete.");
@@ -678,16 +660,13 @@ public class HomePanel extends LegupPanel {
                     writer.append(puzzle.getName()).append(",");
                     if (puzzle.isPuzzleComplete()) {
                         writer.append("1,Solved\n");
-                    }
-                    else {
+                    } else {
                         writer.append("0,Unsolved\n");
                     }
-                }
-                catch (InvalidFileFormatException e) {
+                } catch (InvalidFileFormatException e) {
                     writer.append(fName).append(",Invalid,,Ungradeable\n");
                 }
-            }
-            else {
+            } else {
                 LOGGER.debug("Failed to run sim");
             }
         }

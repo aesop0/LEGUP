@@ -44,11 +44,9 @@ public class NurikabeCellFactory extends ElementFactory {
             NurikabeCell cell = new NurikabeCell(value, new Point(x, y));
             cell.setIndex(y * height + x);
             return cell;
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("nurikabe Factory: unknown value where integer expected");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             throw new InvalidFileFormatException("nurikabe Factory: could not find attribute(s)");
         }
     }

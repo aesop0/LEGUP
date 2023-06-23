@@ -32,18 +32,17 @@ public class TooManySpacesContradictionRuleTest {
         TreeTransition transition = rootNode.getChildren().get(0);
         transition.setRule(RULE);
 
-        Assert.assertNull(RULE.checkContradiction((NurikabeBoard)transition.getBoard()));
+        Assert.assertNull(RULE.checkContradiction((NurikabeBoard) transition.getBoard()));
 
-        NurikabeBoard board = (NurikabeBoard)transition.getBoard();
+        NurikabeBoard board = (NurikabeBoard) transition.getBoard();
 
-        for(int i = 0; i < board.getHeight(); i++) {
-            for(int k = 0; k < board.getWidth(); k++) {
-                Point point  = new Point(k, i);
-                if(point.equals(new Point(1, 0)) || point.equals(new Point(1, 1)) ||
+        for (int i = 0; i < board.getHeight(); i++) {
+            for (int k = 0; k < board.getWidth(); k++) {
+                Point point = new Point(k, i);
+                if (point.equals(new Point(1, 0)) || point.equals(new Point(1, 1)) ||
                         point.equals(new Point(2, 1)) || point.equals(new Point(1, 2)) || point.equals(new Point(0, 1))) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

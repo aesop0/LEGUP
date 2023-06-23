@@ -42,13 +42,12 @@ public class CornerBlackDirectRuleTest {
 
         Assert.assertNotNull(RULE.checkRule(transition));
 
-        for(int i = 0; i < board.getHeight(); i++) {
-            for(int k = 0; k < board.getWidth(); k++) {
-                Point point  = new Point(k, i);
-                if(point.equals(cell)) {
+        for (int i = 0; i < board.getHeight(); i++) {
+            for (int k = 0; k < board.getWidth(); k++) {
+                Point point = new Point(k, i);
+                if (point.equals(cell)) {
                     Assert.assertNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
-                }
-                else {
+                } else {
                     Assert.assertNotNull(RULE.checkRuleAt(transition, board.getCell(k, i)));
                 }
             }

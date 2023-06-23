@@ -55,8 +55,7 @@ public class MasyuController extends ElementController {
                     MasyuLine newLine = new MasyuLine(mousePressedCell.getPuzzleElement(), mouseDraggedCell.getPuzzleElement());
                     puzzle.notifyBoardListeners(listener -> listener.onBoardDataChanged(newLine));
                 }
-            }
-            else {
+            } else {
                 if (mouseDraggedCell != elementView) {
                     Point p1 = mouseDraggedCell.getPuzzleElement().getLocation();
                     Point p2 = elementView.getPuzzleElement().getLocation();
@@ -94,8 +93,7 @@ public class MasyuController extends ElementController {
         }
         if (cell.getData() == MasyuType.UNKNOWN) {
             data.setData(3);
-        }
-        else {
+        } else {
             data.setData(0);
         }
     }

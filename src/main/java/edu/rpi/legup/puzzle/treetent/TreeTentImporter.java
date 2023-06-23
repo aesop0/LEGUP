@@ -69,8 +69,7 @@ public class TreeTentImporter extends PuzzleImporter {
             if (!boardElement.getAttribute("size").isEmpty()) {
                 int size = Integer.valueOf(boardElement.getAttribute("size"));
                 treeTentBoard = new TreeTentBoard(size);
-            }
-            else {
+            } else {
                 if (!boardElement.getAttribute("width").isEmpty() && !boardElement.getAttribute("height").isEmpty()) {
                     int width = Integer.valueOf(boardElement.getAttribute("width"));
                     int height = Integer.valueOf(boardElement.getAttribute("height"));
@@ -169,8 +168,7 @@ public class TreeTentImporter extends PuzzleImporter {
             }
 
             puzzle.setCurrentBoard(treeTentBoard);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("TreeTent Importer: unknown value where integer expected");
         }
     }

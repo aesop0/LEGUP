@@ -51,8 +51,7 @@ public class MaterialSpinnerUI extends BasicSpinnerUI {
         JButton button;
         if (icon != null) {
             button = new JButton(icon);
-        }
-        else {
+        } else {
             button = new BasicArrowButton(SwingConstants.NORTH);
         }
         button.setFocusPainted(false);
@@ -70,8 +69,7 @@ public class MaterialSpinnerUI extends BasicSpinnerUI {
         JButton button;
         if (icon != null) {
             button = new JButton(icon);
-        }
-        else {
+        } else {
             button = new BasicArrowButton(SwingConstants.SOUTH);
         }
         button.setFocusPainted(false);

@@ -145,8 +145,7 @@ public class SkyscrapersImporter extends PuzzleImporter {
             }
 
             puzzle.setCurrentBoard(skyscrapersBoard);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidFileFormatException("Skyscraper Importer: unknown value where integer expected");
         }
     }

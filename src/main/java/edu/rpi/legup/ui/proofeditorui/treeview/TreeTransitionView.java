@@ -100,16 +100,13 @@ public class TreeTransitionView extends TreeElementView {
                 if (getTreeElement().isCorrect()) {
                     if (colorBlind) {
                         c = CORRECT_COLOR_COLORBLIND;
-                    }
-                    else {
+                    } else {
                         c = CORRECT_COLOR;
                     }
-                }
-                else {
+                } else {
                     if (colorBlind) {
                         c = INCORRECT_COLOR_COLORBLIND;
-                    }
-                    else {
+                    } else {
                         c = INCORRECT_COLOR;
                     }
                 }
@@ -127,8 +124,7 @@ public class TreeTransitionView extends TreeElementView {
             graphics2D.setStroke(SELECTION_STROKE);
             graphics2D.setColor(OUTLINE_SELECTION_COLOR);
             graphics2D.drawPolygon(selection_triangle);
-        }
-        else {
+        } else {
             if (isHover) {
                 graphics2D.setColor(HOVER_COLOR);
                 graphics2D.fillPolygon(arrowhead);
@@ -142,23 +138,19 @@ public class TreeTransitionView extends TreeElementView {
                 graphics2D.setStroke(SELECTION_STROKE);
                 graphics2D.setColor(OUTLINE_HOVER_COLOR);
                 graphics2D.drawPolygon(selection_triangle);
-            }
-            else {
+            } else {
                 Color c = DEFAULT_COLOR;
                 if (getTreeElement().isJustified()) {
                     if (getTreeElement().isCorrect()) {
                         if (colorBlind) {
                             c = CORRECT_COLOR_COLORBLIND;
-                        }
-                        else {
+                        } else {
                             c = CORRECT_COLOR;
                         }
-                    }
-                    else {
+                    } else {
                         if (colorBlind) {
                             c = INCORRECT_COLOR_COLORBLIND;
-                        }
-                        else {
+                        } else {
                             c = INCORRECT_COLOR;
                         }
                     }

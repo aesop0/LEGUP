@@ -75,8 +75,7 @@ public class PickGameDialog extends JDialog implements ActionListener {
         if (pickBoth) {
             gameLabel.setBounds(10, 10, 70, 25);
             gameBox.setBounds(80, 10, 190, 25);
-        }
-        else {
+        } else {
             gameLabel.setBounds(10, 30, 70, 25);
             gameBox.setBounds(80, 30, 190, 25);
         }
@@ -147,24 +146,20 @@ public class PickGameDialog extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == gameBox) {
             int index = gameBox.getSelectedIndex();
-        }
-        else {
+        } else {
             if (e.getSource() == ok) {
                 okPressed = true;
                 setVisible(false);
-            }
-            else {
+            } else {
                 if (e.getSource() == cancel) {
                     okPressed = false;
                     setVisible(false);
-                }
-                else {
+                } else {
                     if (e.getSource() == puzzleButton) {
                         File f = new File("puzzlefiles" + File.separator + gameBox.getSelectedItem().toString().toLowerCase() + File.separator);
                         if (f.exists() && f.isDirectory()) {
                             puzzleChooser = new JFileChooser(f);
-                        }
-                        else {
+                        } else {
                             puzzleChooser = new JFileChooser();
                         }
                         if (puzzleChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
